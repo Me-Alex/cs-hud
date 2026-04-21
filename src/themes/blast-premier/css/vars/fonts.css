@@ -1,0 +1,13 @@
+/*
+ * blast-premier — typography
+ * Bebas Neue: ultra-bold condensed, classic esports broadcast style
+ */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@600;700;800&display=swap');
+
+:root {
+	--primary-font-family: 'Barlow';
+	--fallback-font-family: 'sans-serif';
+	--font-family: 'Barlow', sans-serif;
+	--font-weight-normal: 600;
+	--font-weight-bold: 800;
+}

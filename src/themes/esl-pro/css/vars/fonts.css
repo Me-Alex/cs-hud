@@ -1,0 +1,13 @@
+/*
+ * esl-pro — typography
+ * Inter: clean, professional, used widely in ESL digital products
+ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800&display=swap');
+
+:root {
+	--primary-font-family: 'Inter';
+	--fallback-font-family: 'Noto Sans';
+	--font-family: var(--primary-font-family), var(--fallback-font-family), sans-serif;
+	--font-weight-normal: 600;
+	--font-weight-bold: 800;
+}

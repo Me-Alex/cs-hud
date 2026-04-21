@@ -1,0 +1,13 @@
+/*
+ * esl-impact — typography
+ * Barlow Condensed: energetic, compact — fits the IMPACT brand
+ */
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&display=swap');
+
+:root {
+	--primary-font-family: 'Barlow Condensed';
+	--fallback-font-family: 'Arial Narrow';
+	--font-family: var(--primary-font-family), var(--fallback-font-family), sans-serif;
+	--font-weight-normal: 600;
+	--font-weight-bold: 800;
+}

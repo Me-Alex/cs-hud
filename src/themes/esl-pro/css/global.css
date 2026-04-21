@@ -1,0 +1,42 @@
+/*
+ * esl-pro — global styles
+ * ESL Pro League identity: iconic ESL green on black, clean and sharp
+ */
+html {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+}
+
+body {
+	letter-spacing: 0.04em;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+:root {
+	--sidebar-player-row-height: 3.0rem;
+	--sidebar-vertical-spacing: 0.35rem;
+}
+
+.corner,
+.sidebar,
+.top-bar,
+.focused-player {
+	backdrop-filter: none;
+	-webkit-backdrop-filter: none;
+	border-radius: 0;
+}
+
+/* ESL signature green accent */
+.top-bar {
+	border-top: 3px solid rgb(var(--green-rgb));
+}
+
+.sidebar:first-child {
+	border-top: 2px solid rgb(var(--counter-terrorists-fill-rgb));
+}
+
+.sidebar:last-child {
+	border-top: 2px solid rgb(var(--terrorists-fill-rgb));
+}

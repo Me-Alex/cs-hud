@@ -1,0 +1,41 @@
+/*
+ * blast-bounty — global styles
+ * BLAST Bounty identity: deep dark panels, vivid purple/violet accents
+ */
+html {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+}
+
+body {
+	letter-spacing: 0.04em;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+:root {
+	--sidebar-player-row-height: 2.9rem;
+	--sidebar-vertical-spacing: 0.3rem;
+}
+
+.corner,
+.sidebar,
+.top-bar,
+.focused-player {
+	backdrop-filter: blur(4px) brightness(0.82);
+	-webkit-backdrop-filter: blur(4px) brightness(0.82);
+	border-radius: 0;
+}
+
+.top-bar {
+	border-bottom: 2px solid rgb(var(--counter-terrorists-fill-rgb));
+}
+
+.sidebar:first-child {
+	border-top: 2px solid rgb(var(--counter-terrorists-fill-rgb));
+}
+
+.sidebar:last-child {
+	border-top: 2px solid rgb(var(--terrorists-fill-rgb));
+}

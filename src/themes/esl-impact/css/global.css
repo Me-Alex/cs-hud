@@ -1,0 +1,42 @@
+/*
+ * esl-impact — global styles
+ * ESL IMPACT identity: bold magenta/pink on dark, energetic and modern
+ */
+html {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+}
+
+body {
+	letter-spacing: 0.04em;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+:root {
+	--sidebar-player-row-height: 2.85rem;
+	--sidebar-vertical-spacing: 0.3rem;
+}
+
+.corner,
+.sidebar,
+.top-bar,
+.focused-player {
+	backdrop-filter: blur(5px) brightness(0.85);
+	-webkit-backdrop-filter: blur(5px) brightness(0.85);
+	border-radius: 0;
+}
+
+/* ESL IMPACT signature: magenta top accent */
+.top-bar {
+	border-bottom: 3px solid rgb(var(--counter-terrorists-fill-rgb));
+}
+
+.sidebar:first-child {
+	border-top: 2px solid rgb(var(--counter-terrorists-fill-rgb));
+}
+
+.sidebar:last-child {
+	border-top: 2px solid rgb(var(--terrorists-fill-rgb));
+}

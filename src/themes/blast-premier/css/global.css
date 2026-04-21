@@ -1,0 +1,42 @@
+/*
+ * blast-premier — global styles
+ * BLAST Premier identity: sharp black panels, bold yellow accent, tight uppercase font
+ */
+html {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+}
+
+body {
+	letter-spacing: 0.05em;
+	font-weight: 800;
+	text-transform: uppercase;
+}
+
+:root {
+	--sidebar-player-row-height: 2.9rem;
+	--sidebar-vertical-spacing: 0.3rem;
+}
+
+.corner,
+.sidebar,
+.top-bar,
+.focused-player {
+	backdrop-filter: none;
+	-webkit-backdrop-filter: none;
+	border-radius: 0;
+}
+
+/* BLAST signature: yellow bottom border on top bar */
+.top-bar {
+	border-bottom: 3px solid rgb(var(--terrorists-fill-rgb));
+}
+
+.sidebar:first-child {
+	border-top: 3px solid rgb(var(--counter-terrorists-fill-rgb));
+}
+
+.sidebar:last-child {
+	border-top: 3px solid rgb(var(--terrorists-fill-rgb));
+}

@@ -1,0 +1,12 @@
+/*
+ * esl-pro — shadows
+ * Clean dark shadows, subtle ESL green glow on key elements
+ */
+:root {
+	--shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.7);
+	--shadow-md: 0 2px 8px rgba(0, 0, 0, 0.78);
+	--shadow-lg: 0 4px 18px rgba(0, 0, 0, 0.85);
+	--glow-ct: 0 0 10px rgba(0, 130, 200, 0.38);
+	--glow-t: 0 0 10px rgba(255, 107, 0, 0.38);
+	--glow-accent: 0 0 12px rgba(0, 177, 64, 0.45);
+}
