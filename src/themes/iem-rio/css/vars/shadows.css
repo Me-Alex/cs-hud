@@ -1,0 +1,15 @@
+/*
+ * iem-rio — shadows
+ * Minimal, sharp drop shadows — no glow, broadcast clean
+ */
+:root {
+	--shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.6);
+	--shadow-md: 0 2px 8px rgba(0, 0, 0, 0.7);
+	--shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.8);
+
+	/* CT accent glow — subtle, used on score/health */
+	--glow-ct: 0 0 8px rgba(0, 140, 255, 0.35);
+
+	/* T accent glow — subtle */
+	--glow-t: 0 0 8px rgba(232, 131, 10, 0.35);
+}

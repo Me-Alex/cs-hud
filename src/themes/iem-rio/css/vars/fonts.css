@@ -1,0 +1,12 @@
+/*
+ * iem-rio — typography
+ * Barlow Condensed: compact, bold, broadcast-style numerics
+ * Mirrors the tight uppercase style seen on IEM/ESL overlays
+ */
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&display=swap');
+
+:root {
+	--font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+	--font-weight-normal: 600;
+	--font-weight-bold: 800;
+}

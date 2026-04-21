@@ -1,0 +1,57 @@
+/*
+ * iem-rio — color palette
+ * Based on the IEM Rio 2026 broadcast visual identity
+ *
+ * CT  → electric blue  #008CFF  (matches ESL/IEM CT color)
+ * T   → vivid amber    #E8830A  (classic T-side gold/orange)
+ * BG  → near-black     #07090F  (deep navy-black panels)
+ */
+:root {
+	/* CT — electric blue */
+	--counter-terrorists-fill-rgb: 0, 140, 255;
+	--counter-terrorists-border-rgb: 0, 140, 255;
+	--counter-terrorists-text-rgb: 0, 140, 255;
+
+	/* T — amber gold */
+	--terrorists-fill-rgb: 232, 131, 10;
+	--terrorists-border-rgb: 232, 131, 10;
+	--terrorists-text-rgb: 232, 131, 10;
+
+	/* Utility */
+	--red-rgb: 220, 38, 38;
+	--green-rgb: 34, 197, 94;
+
+	/* Panel base — very dark blue-black, high opacity */
+	--corner-color: rgba(5, 7, 15, 0.94);
+	--viewport-fill: transparent;
+	--text-color: #ffffff;
+
+	/* Bomb states */
+	--bomb-planted-fill-rgb: 220, 38, 38;
+	--bomb-defusing-fill-rgb: 220, 38, 38;
+	--bomb-exploded-fill-rgb: 140, 18, 18;
+	--bomb-defused-fill-rgb: 34, 197, 94;
+	--progress-bar-fill-color-bomb: rgb(var(--bomb-planted-fill-rgb));
+
+	/* Sidebar stats */
+	--sidebar-bad-kd-ratio-text: rgb(var(--red-rgb));
+	--sidebar-good-kd-ratio-text: rgb(var(--green-rgb));
+	--sidebar-player-money-text: rgb(var(--green-rgb));
+	--sidebar-round-money-spent-text: rgb(var(--red-rgb));
+	--sidebar-damage-taken-fill: rgb(var(--red-rgb));
+
+	/* Top bar */
+	--top-bar-clock-red-text: rgb(var(--red-rgb));
+	--top-bar-maps-fill: rgba(255, 255, 255, 0.9);
+
+	/* Focused player */
+	--focused-player-health-red-rgb: 200, 28, 28;
+	--focused-player-health-red: rgb(var(--focused-player-health-red-rgb));
+
+	/* Radar */
+	--radar-player-carrying-bomb-fill: rgb(var(--red-rgb));
+	--radar-smoke-ct-fill: rgba(0, 100, 200, 0.70);
+	--radar-smoke-t-fill: rgba(200, 110, 20, 0.70);
+	--radar-inferno-flame-ct-fill: rgba(100, 40, 140, 0.70);
+	--radar-inferno-flame-t-fill: rgba(200, 60, 10, 0.70);
+}
