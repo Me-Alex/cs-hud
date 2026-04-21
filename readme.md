@@ -1,93 +1,197 @@
-# cs-hud
-A Free and Customizable Spectator HUD for Your Counter-Strike 2 (and CS:GO) Streams.
+<h1 align="center">
+  <br>
+  cs-hud
+  <br>
+</h1>
 
-![](assets/cs2-hud-screenshot-1080.png)
+<p align="center">
+  <strong>A free, customizable spectator HUD for Counter-Strike 2 streams and broadcasts.</strong>
+</p>
 
-## Getting Started
-The easiest way is to use the pre-packaged binaries, but other options will be available in the future.
-<!-- TODO write, then link to more in-depth guides for running via yarn, docker -->
+<p align="center">
+  <a href="https://github.com/drweissbrot/cs-hud/releases/latest">
+    <img src="https://img.shields.io/github/v/release/drweissbrot/cs-hud?style=flat-square&color=orange&label=latest+release" alt="Latest Release">
+  </a>
+  <a href="https://github.com/drweissbrot/cs-hud/blob/master/license.txt">
+    <img src="https://img.shields.io/badge/license-ISC-blue?style=flat-square" alt="License">
+  </a>
+  <a href="https://github.com/drweissbrot/cs-hud/issues">
+    <img src="https://img.shields.io/github/issues/drweissbrot/cs-hud?style=flat-square" alt="Issues">
+  </a>
+  <img src="https://img.shields.io/badge/CS2-supported-brightgreen?style=flat-square" alt="CS2 Supported">
+  <img src="https://img.shields.io/badge/node-%3E%3D18-informational?style=flat-square" alt="Node Version">
+</p>
 
-1. Download [`cs-hud-server-win.exe`](https://github.com/drweissbrot/cs-hud/releases/latest/download/cs-hud-server-win.exe) if you're on Windows, or [`cs-hud-server-linux`](https://github.com/drweissbrot/cs-hud/releases/latest/download/cs-hud-server-linux) if you're on Linux. You can find more details on the [Releases tab](https://github.com/drweissbrot/cs-hud/releases/latest).
-1. Also download [`gamestate_integration_drweissbrot_hud.cfg`](https://github.com/drweissbrot/cs-hud/releases/latest/download/gamestate_integration_drweissbrot_hud.cfg).
-1. Head to your CS2 folder and the `game/csgo/cfg` subdirectory, by default on Windows that is `C:\Program Files (x86)\Steam\steamapps\common\Counter-Strike Global Offensive\game\csgo\cfg`. You can also find it by opening your Steam library, right-clicking CS2, `Properties...`, `Installed Files`, `Browse...`, and then heading into the `game` directory, then into `csgo`, then `cfg`.
-1. Save `gamestate_integration_drweissbrot_hud.cfg` there.
-1. Start CS2 (restart it if you already had it open), and find a match to spectate. You could for example play a demo, or spectate a friend via CSTV.
-1. Now run `cs-hud-server-win.exe` or `cs-hud-server-linux`.
-1. Open http://localhost:31982/hud in your favorite browser, and you should see the HUD.
+<p align="center">
+  <a href="#-getting-started">Getting Started</a> •
+  <a href="#-obs-browser-source">OBS Setup</a> •
+  <a href="#-customization">Customization</a> •
+  <a href="#-faq">FAQ</a> •
+  <a href="#-credits">Credits</a>
+</p>
 
-There's also the config page available at http://localhost:31982/config, and a separate radar for observing at http://localhost:31982/radar.  
-There are also [some console commands you may want to use](docs/cvars.md).
+<br>
 
-Depending on how you actually want to use the HUD, you've now got two options:
+![cs-hud screenshot](assets/cs2-hud-screenshot-1080.png)
 
-### OBS Browser Source
-This is a good choice if you're fine with not seeing the HUD on top of the game yourself, or you can't or don't want to run the game in Fullscreen Windowed.
-It'll likely work similarly in alternatives to OBS.
+---
 
-1. Make sure you've followed the instructions above. You should see a console window saying `cs-hud is active`.
-1. In OBS, add a Game Capture or Window Capture, and select Counter-Strike.
-1. Add a Browser source. Set the `URL` to `http://localhost:31982/hud?transparent`, the `Width`, `Height`, and `FPS` to the values you want, and make sure that `Custom CSS` is empty.
-1. Find a match to spectate in CS, and the Browser source should show the HUD. (The Browser source will not show anything when you're not spectating a match.)
+## ✨ Features
 
-### Fullscreen Windowed
-Alternatively, you can use a separate executable to overlay the HUD on top of CS.
+- **Live game data** — health, armor, money, weapons, round timer, score, and more
+- **Team panels** — all 10 players visible at once with kills, assists, deaths, and utility
+- **Mini radar** — powered by [Simple Radar](https://readtldr.gg/simpleradar) for clear map reads
+- **OBS-ready** — transparent background via `?transparent` URL param, plug-and-play Browser Source
+- **Fullscreen overlay** — dedicated overlay app for on-top display without OBS
+- **Fully customizable** — colors, fonts, scale, and advanced theming via the `/config` page
+- **Free & open source** — use it for personal streams, community events, or tournaments
 
-1. Make sure you've followed the instructions above. You should see a console window saying `cs-hud is active`.
-1. Download [`cs-hud-overlay-win32-x64.zip`](https://github.com/drweissbrot/cs-hud/releases/latest/download/cs-hud-overlay-win32-x64.zip) on Windows, or [`cs-hud-overlay-linux-x64.tar.gz`](https://github.com/drweissbrot/cs-hud/releases/latest/download/cs-hud-overlay-linux-x64.tar.gz) on Linux. Extract all files.
-1. Run `cs-hud-overlay.exe` on Windows, or `cs-hud-overlay` on Linux.
-1. Open Counter-Strike, go to the Settings, `Video`, and set the `Display Mode` to `Fullscreen Windowed`.
-1. Find a match to spectate in CS. The HUD should now overlay your screen.
-1. If the HUD is on the wrong monitor, select it in the taskbar, and press `Win`+`Shift`+Arrow keys to move it to the correct monitor.
+---
 
+## 🚀 Getting Started
 
-## FAQ
+### 1 — Download the server
 
-### Does this work with CS2?
-Yes.  
-Everything should work with both CS:GO and CS2. If you spot anything weird, [please open an issue.](https://github.com/drweissbrot/cs-hud/issues)
+| Platform | Download |
+|----------|----------|
+| Windows  | [`cs-hud-server-win.exe`](https://github.com/drweissbrot/cs-hud/releases/latest/download/cs-hud-server-win.exe) |
+| Linux    | [`cs-hud-server-linux`](https://github.com/drweissbrot/cs-hud/releases/latest/download/cs-hud-server-linux) |
 
-### Can I use this for my event?
-Yes.  
-Attribution is not required, but if possible, please include a link to this GitHub project somewhere.
+### 2 — Install the GSI config
 
-### Why would I use this?
-Counter-Strike's in-game spectator HUD isn't designed for video.
-In a stream you can't, for example, just press Tab when you want to know how many kills someone has.
-In the early days of CS2, it didn't even show player names!  
-Custom HUDs like this one are designed for video: They show you everything, are more readable on a big TV, and just look a bit nicer than the game.
+1. Download [`gamestate_integration_drweissbrot_hud.cfg`](https://github.com/drweissbrot/cs-hud/releases/latest/download/gamestate_integration_drweissbrot_hud.cfg)
+2. Place it in your CS2 cfg folder:
+   ```
+   C:\Program Files (x86)\Steam\steamapps\common\Counter-Strike Global Offensive\game\csgo\cfg
+   ```
+   > **Tip:** In Steam, right-click CS2 → `Properties` → `Installed Files` → `Browse`, then navigate to `game/csgo/cfg`.
 
-Why would you use this HUD specificially? It's pretty easy to use, easy to extend and customize to your needs, and free.
-(Please do note that this is a passion project, so if you're a big TO that needs support SLAs, you might want to look elsewhere :D)
+### 3 — Run & spectate
 
-### How do I change the colors/font/X?
-For simple visual changes like colors and fonts, open the HUD config page at http://localhost:31982/config and scroll down to `Style Overrides`:
+1. (Re)start CS2
+2. Run `cs-hud-server-win.exe` — you should see `cs-hud is active` in the console
+3. Open a demo or spectate via CSTV
+4. Visit **http://localhost:31982/hud** in your browser — the HUD is live!
 
-To change a color, select the color you want to use, then press `Save` and `Force HUD Refresh`.
-Most surfaces use the `css.terrorists-fill-rgb` color (and it's CT counterpart), most text uses `css.terrorists-text-rgb`, etc.
-Note that color changes are only applied after refreshing the HUD.
+> Additional pages:
+> - **Config:** http://localhost:31982/config
+> - **Radar only:** http://localhost:31982/radar
 
-To change the font, type in the name of the font you want to use in the `css.primary-font-family` textbox, then press `Save` and `Force HUD Refresh`.
-The font needs to be installed on your PC.
-Note that font changes are only applied after refreshing the HUD.
+---
 
-If you want everything to be a bit more zoomed in or zoomed out, type something into the `css.base-scale-factor` textbox, then press `Save` and `Force HUD Refresh`.
-By default this is roughly equivalent to `10px`, so if you want things to be twice as big, type in `20px`.
-Things will likely break if you go too small or too big.
-Note that changes to the scale factor are only applied after refreshing the HUD.
+## 📺 OBS Browser Source
 
-If you want to change something else, [have a look at the docs](docs/theming.md).
+Best option for streamers who don't need the HUD overlaid on their own screen.
 
-### I need help!
-Please [have a look at the docs folder](https://github.com/drweissbrot/cs-hud/tree/master/docs) first.
-If nothing in there helps you, [please open an issue.](https://github.com/drweissbrot/cs-hud/issues)
-Please don't send me emails asking for help (emails about other things are fine).
+1. In OBS, add a **Browser Source**
+2. Set the URL to:
+   ```
+   http://localhost:31982/hud?transparent
+   ```
+3. Set **Width** and **Height** to match your stream resolution (e.g. `1920` × `1080`)
+4. Clear the **Custom CSS** field completely
+5. Spectate a match in CS2 — the HUD will appear automatically
 
+---
 
-## Credits
-Special Thanks to [readtldr.gg](https://readtldr.gg) for providing [Simple Radar](https://readtldr.gg/simpleradar), the clean and readable minimaps included in this project.
-([You can also use them in the game, they're pretty great!](https://readtldr.gg/simpleradar))
+## 🪟 Fullscreen Overlay
 
-![](assets/simpleradar.webp)
+Use this if you want the HUD on top of CS2 while you play/spectate.
 
-Big shoutout to [u/Bkid](https://www.reddit.com/user/bkid) for [documenting most of Game State Integration](https://www.reddit.com/r/GlobalOffensive/comments/cjhcpy/game_state_integration_a_very_large_and_indepth).
-This project wouldn't have happened without that post.
+| Platform | Download |
+|----------|----------|
+| Windows  | [`cs-hud-overlay-win32-x64.zip`](https://github.com/drweissbrot/cs-hud/releases/latest/download/cs-hud-overlay-win32-x64.zip) |
+| Linux    | [`cs-hud-overlay-linux-x64.tar.gz`](https://github.com/drweissbrot/cs-hud/releases/latest/download/cs-hud-overlay-linux-x64.tar.gz) |
+
+1. Extract and run `cs-hud-overlay.exe` (Windows) or `cs-hud-overlay` (Linux)
+2. In CS2: `Settings` → `Video` → set **Display Mode** to `Fullscreen Windowed`
+3. Spectate a match — the overlay appears automatically
+4. If the HUD is on the wrong monitor, select it in the taskbar and press `Win + Shift + Arrow Keys`
+
+---
+
+## 🎨 Customization
+
+Open **http://localhost:31982/config** and scroll to **Style Overrides**.
+
+| What to change | Setting key |
+|---|---|
+| T-side color | `css.terrorists-fill-rgb` |
+| CT-side color | `css.counter-terrorists-fill-rgb` |
+| Text color | `css.terrorists-text-rgb` |
+| Font | `css.primary-font-family` (must be installed on your PC) |
+| Overall scale | `css.base-scale-factor` (default: `10px`) |
+
+After any change, press **Save** then **Force HUD Refresh**.
+
+For advanced theming (custom layouts, new panels, full CSS overrides), see [`docs/theming.md`](docs/theming.md).
+
+---
+
+## ❓ FAQ
+
+<details>
+<summary><strong>Does this work with CS2?</strong></summary>
+
+Yes — fully supported. It also works with CS:GO. If you notice anything broken, [please open an issue](https://github.com/drweissbrot/cs-hud/issues).
+</details>
+
+<details>
+<summary><strong>Can I use this for my event or tournament?</strong></summary>
+
+Yes — attribution is not required, but a link back to this repo is always appreciated.
+</details>
+
+<details>
+<summary><strong>Why use a custom HUD at all?</strong></summary>
+
+CS2's built-in spectator HUD isn't designed for video. Viewers can't press Tab, player names were missing in early CS2, and readability on large screens is poor. Custom HUDs like this one show everything at a glance, look better on TV, and are built specifically for broadcast.
+</details>
+
+<details>
+<summary><strong>I need help!</strong></summary>
+
+1. Check the [`docs` folder](https://github.com/drweissbrot/cs-hud/tree/master/docs) first
+2. If you're still stuck, [open an issue](https://github.com/drweissbrot/cs-hud/issues)
+
+Please don't send emails asking for support — issues are the right place.
+</details>
+
+---
+
+## 🛠 Running from Source
+
+Requires **Node.js ≥ 18** and **Yarn**.
+
+```bash
+git clone https://github.com/drweissbrot/cs-hud.git
+cd cs-hud
+yarn install
+yarn start
+```
+
+For live-reload during development:
+```bash
+yarn watch
+```
+
+---
+
+## 📄 Changelog
+
+See [`changelog.md`](changelog.md) for the full version history.
+
+---
+
+## 🙏 Credits
+
+- [**Simple Radar**](https://readtldr.gg/simpleradar) by [readtldr.gg](https://readtldr.gg) — clean minimaps bundled with this project
+- [**u/Bkid**](https://www.reddit.com/user/bkid) — for the [definitive Game State Integration documentation](https://www.reddit.com/r/GlobalOffensive/comments/cjhcpy/game_state_integration_a_very_large_and_indepth) that made this project possible
+
+![Simple Radar logo](assets/simpleradar.webp)
+
+---
+
+<p align="center">
+  Made with ❤️ for the CS community · <a href="https://github.com/drweissbrot/cs-hud/issues">Report a bug</a> · <a href="https://github.com/drweissbrot/cs-hud/releases">Releases</a>
+</p>
