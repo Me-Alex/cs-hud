@@ -1,0 +1,160 @@
+/*
+ * pro-overrides.css — Professional Broadcast Theme
+ * Drop-in override for the fennec theme.
+ * Inspired by BLAST Premier / ESL Pro League broadcast visuals.
+ *
+ * HOW TO USE:
+ * Add this line at the bottom of src/themes/fennec/index.css:
+ *   @import './css/pro-overrides.css';
+ * Then restart the server and refresh the HUD.
+ */
+
+/* ─────────────────────────────────────────
+   GOOGLE FONTS — Barlow Condensed (pro HUD feel)
+   ───────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=Barlow:wght@400;500;600&display=swap');
+
+/* ─────────────────────────────────────────
+   TYPOGRAPHY
+   ───────────────────────────────────────── */
+:root {
+	--primary-font-family: 'Barlow Condensed';
+	--fallback-font-family: 'Barlow', 'Noto Sans';
+	--font-family: var(--primary-font-family), var(--fallback-font-family), sans-serif;
+}
+
+/* ─────────────────────────────────────────
+   TEAM COLORS
+   CT  → clean cobalt blue  (BLAST CT palette)
+   T   → warm amber-orange  (BLAST T palette)
+   ───────────────────────────────────────── */
+:root {
+	/* CT — sharp cobalt blue */
+	--counter-terrorists-fill-rgb: 0, 120, 215;
+	--counter-terrorists-border-rgb: 0, 120, 215;
+	--counter-terrorists-text-rgb: 0, 120, 215;
+
+	/* T — rich amber */
+	--terrorists-fill-rgb: 220, 120, 0;
+	--terrorists-border-rgb: 220, 120, 0;
+	--terrorists-text-rgb: 220, 120, 0;
+
+	/* Utility colors */
+	--red-rgb: 220, 48, 48;
+	--green-rgb: 40, 195, 90;
+}
+
+/* ─────────────────────────────────────────
+   CORNER / BACKGROUND PANELS
+   Darker, more opaque = better TV contrast
+   ───────────────────────────────────────── */
+:root {
+	--corner-color: rgba(5, 8, 14, 0.88);
+	--viewport-fill: transparent;
+	--text-color: #ffffff;
+}
+
+/* ─────────────────────────────────────────
+   SHADOWS — deeper, sharper for 1080p clarity
+   ───────────────────────────────────────── */
+:root {
+	--box-shadow:
+		0 0 0.4rem rgba(0, 0, 0, 0.7),
+		0 0.2rem 1.2rem rgba(0, 0, 0, 0.5);
+	--filter-drop-shadow: drop-shadow(0 0 0.4rem rgba(0,0,0,0.7));
+}
+
+/* ─────────────────────────────────────────
+   TOP BAR — tighter, cleaner score display
+   ───────────────────────────────────────── */
+:root {
+	--top-bar-score-font-size: 3.2rem;
+	--top-bar-padding-x: 0.7rem;
+	--top-bar-row-height: calc(2 * var(--top-bar-padding-x) + var(--top-bar-score-font-size));
+	--top-bar-half-row-height: calc(var(--top-bar-row-height) / 2);
+}
+
+/* ─────────────────────────────────────────
+   SIDEBAR — slightly taller rows for readability
+   ───────────────────────────────────────── */
+:root {
+	--sidebar-player-row-height: 3.1rem;
+	--sidebar-vertical-spacing: 0.4rem;
+}
+
+/* ─────────────────────────────────────────
+   GLOBAL ELEMENT POLISH
+   Sharper text rendering, better letter-spacing
+   for condensed sport-broadcast feel
+   ───────────────────────────────────────── */
+html {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+}
+
+body {
+	letter-spacing: 0.02em;
+}
+
+/* ─────────────────────────────────────────
+   FOCUSED PLAYER PANEL
+   Health bar turns more vivid red at low HP
+   ───────────────────────────────────────── */
+:root {
+	--focused-player-health-red-rgb: 200, 30, 30;
+	--focused-player-health-red: rgb(var(--focused-player-health-red-rgb));
+}
+
+/* ─────────────────────────────────────────
+   SIDEBAR STAT COLORS — high contrast
+   ───────────────────────────────────────── */
+:root {
+	--sidebar-bad-kd-ratio-text: rgb(var(--red-rgb));
+	--sidebar-good-kd-ratio-text: rgb(var(--green-rgb));
+	--sidebar-player-money-text: rgb(var(--green-rgb));
+	--sidebar-round-money-spent-text: rgb(var(--red-rgb));
+	--sidebar-damage-taken-fill: rgb(var(--red-rgb));
+}
+
+/* ─────────────────────────────────────────
+   BOMB COLORS — vivid, easy to spot on stream
+   ───────────────────────────────────────── */
+:root {
+	--bomb-planted-fill-rgb: 220, 48, 48;
+	--bomb-defusing-fill-rgb: 220, 48, 48;
+	--bomb-exploded-fill-rgb: 180, 30, 30;
+	--bomb-defused-fill-rgb: 40, 195, 90;
+	--progress-bar-fill-color-bomb: rgb(var(--bomb-planted-fill-rgb));
+}
+
+/* ─────────────────────────────────────────
+   RADAR OVERLAYS
+   ───────────────────────────────────────── */
+:root {
+	--radar-player-carrying-bomb-fill: rgb(var(--red-rgb));
+	--radar-smoke-ct-fill: rgba(80, 130, 200, 0.72);
+	--radar-smoke-t-fill: rgba(200, 140, 60, 0.72);
+	--radar-inferno-flame-ct-fill: rgba(130, 60, 110, 0.72);
+	--radar-inferno-flame-t-fill: rgba(200, 80, 10, 0.72);
+}
+
+/* ─────────────────────────────────────────
+   TOP BAR ACCENTS
+   ───────────────────────────────────────── */
+:root {
+	--top-bar-clock-red-text: rgb(var(--red-rgb));
+	--top-bar-maps-fill: rgba(255, 255, 255, 0.82);
+}
+
+/* ─────────────────────────────────────────
+   SUBTLE BACKDROP BLUR on panel containers
+   Gives a modern "frosted glass" layer
+   ───────────────────────────────────────── */
+.corner,
+.sidebar,
+.top-bar,
+.focused-player {
+	backdrop-filter: blur(4px) brightness(0.92);
+	-webkit-backdrop-filter: blur(4px) brightness(0.92);
+}
