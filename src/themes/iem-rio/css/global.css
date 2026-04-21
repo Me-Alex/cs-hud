@@ -1,7 +1,6 @@
 /*
  * iem-rio — global styles
  * Inspired by the IEM Rio 2026 broadcast HUD
- * Clean, sharp panels with bold typography and team color accents
  */
 html {
 	-webkit-font-smoothing: antialiased;
@@ -15,13 +14,11 @@ body {
 	text-transform: uppercase;
 }
 
-/* Tighter sidebar rows — broadcast style */
 :root {
 	--sidebar-player-row-height: 2.85rem;
 	--sidebar-vertical-spacing: 0.3rem;
 }
 
-/* Sharp, near-opaque panels — no blur, hard edges like broadcast overlay */
 .corner,
 .sidebar,
 .top-bar,
@@ -31,17 +28,14 @@ body {
 	border-radius: 0;
 }
 
-/* CT side — left sidebar — blue accent top border */
 .sidebar:first-child {
 	border-top: 2px solid rgb(var(--counter-terrorists-fill-rgb));
 }
 
-/* T side — right sidebar — orange accent top border */
 .sidebar:last-child {
 	border-top: 2px solid rgb(var(--terrorists-fill-rgb));
 }
 
-/* Top bar — sharp bottom edge with subtle separator */
 .top-bar {
 	border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
