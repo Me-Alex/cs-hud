@@ -1,0 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap');
+
+:root {
+	--primary-font-family: 'Rajdhani';
+	--fallback-font-family: 'Noto Sans';
+	--font-family: var(--primary-font-family), var(--fallback-font-family), sans-serif;
+}

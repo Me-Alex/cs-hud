@@ -1,0 +1,29 @@
+/*
+ * dark-pro top-bar layout
+ * Wider bar (60%), no italic skew feel, clean grid
+ */
+.top-bar {
+	position: fixed;
+	top: var(--viewport-margin-top);
+	left: calc((100% - var(--top-bar-width)) / 2);
+	right: calc((100% - var(--top-bar-width)) / 2);
+
+	display: grid;
+	grid-template-columns: 20fr 14fr 20fr;
+	grid-template-areas:
+		'series-name series-name series-name'
+		'team-left center team-right';
+	align-items: start;
+
+	filter: var(--filter-drop-shadow);
+	text-align: center;
+}
+
+/* wider bar on dark-pro */
+:root {
+	--top-bar-width: 56%;
+	--top-bar-score-font-size: 3.4rem;
+	--top-bar-padding-x: 0.65rem;
+	--top-bar-row-height: calc(2 * var(--top-bar-padding-x) + var(--top-bar-score-font-size));
+	--top-bar-half-row-height: calc(var(--top-bar-row-height) / 2);
+}

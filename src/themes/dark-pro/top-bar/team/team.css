@@ -1,0 +1,17 @@
+/*
+ * dark-pro — no skewX on team panels, straight layout
+ */
+.team {
+	transform-origin: top;
+}
+
+.team.--left {
+	grid-area: team-left;
+	/* remove the skew from fennec */
+	transform: none;
+}
+
+.team.--right {
+	grid-area: team-right;
+	transform: none;
+}

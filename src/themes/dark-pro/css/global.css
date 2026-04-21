@@ -1,0 +1,28 @@
+/*
+ * dark-pro global polish
+ */
+html {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+}
+
+body {
+	letter-spacing: 0.03em;
+	font-weight: 600;
+}
+
+/* sidebar rows — tighter spacing */
+:root {
+	--sidebar-player-row-height: 3.0rem;
+	--sidebar-vertical-spacing: 0.4rem;
+}
+
+/* all HUD panels get backdrop blur */
+.corner,
+.sidebar,
+.top-bar,
+.focused-player {
+	backdrop-filter: blur(6px) brightness(0.88);
+	-webkit-backdrop-filter: blur(6px) brightness(0.88);
+}

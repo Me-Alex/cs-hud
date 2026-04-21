@@ -1,0 +1,58 @@
+/*
+ * dark-pro score boxes
+ * Straight rectangles, no skew pseudo-elements
+ * Colored background = team color, separated by 1px gap
+ */
+
+.score {
+	display: flex;
+	font-size: var(--top-bar-score-font-size);
+	font-weight: 700;
+	letter-spacing: 0.03em;
+}
+
+/* remove the fennec diagonal pseudo-elements */
+.score.--left::before,
+.score.--right::after {
+	content: none;
+	display: none;
+}
+
+.score .inner {
+	padding: var(--top-bar-padding-x) 1.2rem;
+	min-width: 2.4ch;
+	width: 100%;
+	text-align: center;
+	z-index: 1;
+}
+
+/* CT score — solid blue */
+.score.--ct .inner {
+	background: rgb(var(--counter-terrorists-fill-rgb));
+	color: #fff;
+}
+
+/* T score — solid orange */
+.score.--t .inner {
+	background: rgb(var(--terrorists-fill-rgb));
+	color: #fff;
+}
+
+.score.--left {
+	grid-area: score-left;
+	justify-content: flex-end;
+}
+
+.score.--right {
+	grid-area: score-right;
+	justify-content: flex-start;
+}
+
+/* subtle glow under score block */
+.score.--ct.--left .inner {
+	box-shadow: -0.4rem 0 1.2rem rgba(0, 140, 255, 0.35);
+}
+
+.score.--t.--right .inner {
+	box-shadow: 0.4rem 0 1.2rem rgba(255, 110, 0, 0.35);
+}

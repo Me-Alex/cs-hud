@@ -1,0 +1,53 @@
+/*
+ * dark-pro — color overrides
+ * Ultra-dark background, vivid CT/T accents, neon glow feel
+ */
+:root {
+	/* CT — electric blue */
+	--counter-terrorists-fill-rgb: 0, 140, 255;
+	--counter-terrorists-border-rgb: 0, 140, 255;
+	--counter-terrorists-text-rgb: 0, 140, 255;
+
+	/* T — vivid orange */
+	--terrorists-fill-rgb: 255, 110, 0;
+	--terrorists-border-rgb: 255, 110, 0;
+	--terrorists-text-rgb: 255, 110, 0;
+
+	/* Utility */
+	--red-rgb: 230, 40, 40;
+	--green-rgb: 30, 210, 90;
+
+	/* Panel base — near-black with slight blue tint */
+	--corner-color: rgba(6, 8, 16, 0.92);
+	--viewport-fill: transparent;
+	--text-color: #f0f0f0;
+
+	/* Bomb */
+	--bomb-planted-fill-rgb: 230, 40, 40;
+	--bomb-defusing-fill-rgb: 230, 40, 40;
+	--bomb-exploded-fill-rgb: 160, 20, 20;
+	--bomb-defused-fill-rgb: 30, 210, 90;
+	--progress-bar-fill-color-bomb: rgb(var(--bomb-planted-fill-rgb));
+
+	/* Sidebar stats */
+	--sidebar-bad-kd-ratio-text: rgb(var(--red-rgb));
+	--sidebar-good-kd-ratio-text: rgb(var(--green-rgb));
+	--sidebar-player-money-text: rgb(var(--green-rgb));
+	--sidebar-round-money-spent-text: rgb(var(--red-rgb));
+	--sidebar-damage-taken-fill: rgb(var(--red-rgb));
+
+	/* Top bar */
+	--top-bar-clock-red-text: rgb(var(--red-rgb));
+	--top-bar-maps-fill: rgba(240, 240, 240, 0.85);
+
+	/* Focused player */
+	--focused-player-health-red-rgb: 210, 30, 30;
+	--focused-player-health-red: rgb(var(--focused-player-health-red-rgb));
+
+	/* Radar */
+	--radar-player-carrying-bomb-fill: rgb(var(--red-rgb));
+	--radar-smoke-ct-fill: rgba(60, 120, 210, 0.72);
+	--radar-smoke-t-fill: rgba(210, 130, 40, 0.72);
+	--radar-inferno-flame-ct-fill: rgba(120, 50, 120, 0.72);
+	--radar-inferno-flame-t-fill: rgba(210, 70, 10, 0.72);
+}
